@@ -21,7 +21,7 @@
 
 <h1>Mini3D</h1>
 
-<a class="insta-user" href="https://instagram.com/minithreedgeek" target="_blank">
+<a class="instagram-button" href="https://instagram.com/minithreedgeek" target="_blank">
 @minithreedgeek
 </a>
 
@@ -210,16 +210,14 @@ Instagram
 
 <script>
 
-function filterSelection(category) {
+function filterSelection(category){
 
-let cards = document.querySelectorAll(".card")
+let cards=document.querySelectorAll(".card")
 
-cards.forEach(card => {
+cards.forEach(card=>{
 
-if(category === "all"){
-
+if(category==="all"){
 card.style.display="block"
-
 }else{
 
 if(card.classList.contains(category)){
@@ -234,40 +232,38 @@ card.style.display="none"
 
 }
 
+document.getElementById("search").addEventListener("keyup",function(){
 
-document.getElementById("search").addEventListener("keyup", function() {
+let value=this.value.toLowerCase()
 
-let value = this.value.toLowerCase()
+let cards=document.querySelectorAll(".card")
 
-let cards = document.querySelectorAll(".card")
+cards.forEach(card=>{
 
-cards.forEach(card => {
+let text=card.innerText.toLowerCase()
 
-let text = card.innerText.toLowerCase()
-
-card.style.display = text.includes(value) ? "block" : "none"
-
-})
-
-})
-
-
-let images = document.querySelectorAll(".card img")
-let lightbox = document.getElementById("lightbox")
-let lightboxImg = document.getElementById("lightbox-img")
-
-images.forEach(img => {
-
-img.addEventListener("click", () => {
-
-lightbox.style.display = "flex"
-lightboxImg.src = img.src
+card.style.display=text.includes(value)?"block":"none"
 
 })
 
 })
 
-lightbox.addEventListener("click", () => {
+let images=document.querySelectorAll(".card img")
+let lightbox=document.getElementById("lightbox")
+let lightboxImg=document.getElementById("lightbox-img")
+
+images.forEach(img=>{
+
+img.addEventListener("click",()=>{
+
+lightbox.style.display="flex"
+lightboxImg.src=img.src
+
+})
+
+})
+
+lightbox.addEventListener("click",()=>{
 
 lightbox.style.display="none"
 
@@ -276,5 +272,4 @@ lightbox.style.display="none"
 </script>
 
 </body>
-
 </html>
