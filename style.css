@@ -16,7 +16,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-gap:10px;
+gap:12px;
 
 }
 
@@ -29,12 +29,22 @@ margin:0;
 }
 
 
-.insta-user{
+.instagram-button{
 
-color:#e1306c;
+background:#e1306c;
+color:white;
 text-decoration:none;
+padding:10px 20px;
+border-radius:20px;
 font-weight:bold;
-font-size:18px;
+transition:0.3s;
+
+}
+
+
+.instagram-button:hover{
+
+background:#ff4f8b;
 
 }
 
