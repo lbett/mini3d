@@ -1,5 +1,5 @@
 body{
-font-family: Arial, sans-serif;
+font-family:Arial, sans-serif;
 background:#0f0f0f;
 color:white;
 margin:0;
@@ -8,9 +8,35 @@ margin:0;
 header{
 text-align:center;
 padding:40px;
-font-size:32px;
-font-weight:bold;
 background:#111;
+}
+
+header h1{
+margin:0;
+font-size:40px;
+}
+
+header p{
+opacity:0.7;
+}
+
+.filters{
+text-align:center;
+margin:20px;
+}
+
+.filters button{
+margin:5px;
+padding:10px 15px;
+border:none;
+background:#222;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+
+.filters button:hover{
+background:#444;
 }
 
 .gallery{
@@ -22,7 +48,7 @@ padding:40px;
 
 .card{
 background:#1c1c1c;
-border-radius:12px;
+border-radius:10px;
 overflow:hidden;
 transition:0.3s;
 box-shadow:0 5px 15px rgba(0,0,0,0.5);
@@ -36,6 +62,7 @@ transform:scale(1.05);
 width:100%;
 height:220px;
 object-fit:cover;
+cursor:pointer;
 }
 
 .card-content{
@@ -51,12 +78,36 @@ button{
 background:#00c853;
 border:none;
 padding:10px 20px;
-border-radius:6px;
 color:white;
+border-radius:5px;
 cursor:pointer;
-font-size:14px;
 }
 
 button:hover{
 background:#00e676;
+}
+
+.section-title{
+text-align:center;
+font-size:30px;
+margin-top:40px;
+}
+
+#lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
 }
