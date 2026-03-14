@@ -1,2 +1,2 @@
-# 3d-store
-3d-store
+# mini3d
+mini3d
