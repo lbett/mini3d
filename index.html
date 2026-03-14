@@ -1,13 +1,24 @@
-<!DOCTYPE html>
-<html>
+body{
+font-family:Arial, sans-serif;
+background:#0f0f0f;
+color:white;
+margin:0;
+}
 
-<head>
+header{
+text-align:center;
+padding:40px;
+background:#111;
+}
 
-<title>Mini3D</title>
+header h1{
+margin:0;
+font-size:40px;
+}
 
-<link rel="stylesheet" href="style.css">
-
-<style>
+header p{
+opacity:0.7;
+}
 
 .filters{
 text-align:center;
@@ -16,247 +27,87 @@ margin:20px;
 
 .filters button{
 margin:5px;
+padding:10px 15px;
+border:none;
+background:#222;
+color:white;
+cursor:pointer;
+border-radius:5px;
 }
 
-</style>
-
-<script>
-
-function filterCategory(category){
-
-let items = document.querySelectorAll(".card");
-
-items.forEach(card => {
-
-if(category === "all"){
-card.style.display="block";
-return;
+.filters button:hover{
+background:#444;
 }
 
-if(card.classList.contains(category)){
-card.style.display="block";
-}else{
-card.style.display="none";
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+gap:30px;
+padding:40px;
 }
 
-});
-
+.card{
+background:#1c1c1c;
+border-radius:10px;
+overflow:hidden;
+transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
 }
 
-</script>
+.card:hover{
+transform:scale(1.05);
+}
 
-</head>
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+cursor:pointer;
+}
 
-<body>
+.card-content{
+padding:20px;
+text-align:center;
+}
 
-<header>
-Mini3D
-</header>
+.card h3{
+margin-bottom:15px;
+}
 
-<div class="filters">
+button{
+background:#00c853;
+border:none;
+padding:10px 20px;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
 
-<button onclick="filterCategory('all')">Todos</button>
-<button onclick="filterCategory('cuadro')">Cuadros</button>
-<button onclick="filterCategory('deco')">Decoración</button>
-<button onclick="filterCategory('figura')">Figuras</button>
-<button onclick="filterCategory('iman')">Imanes</button>
-<button onclick="filterCategory('llavero')">Llaveros</button>
-<button onclick="filterCategory('mate')">Mates</button>
-<button onclick="filterCategory('posavaso')">Posavasos</button>
-<button onclick="filterCategory('accesorio')">Accesorios</button>
+button:hover{
+background:#00e676;
+}
 
-</div>
+.section-title{
+text-align:center;
+font-size:30px;
+margin-top:40px;
+}
 
-<section class="gallery">
+#lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
 
-<div class="card cuadro">
-<img src="images/cuadro-jack.jpeg">
-<div class="card-content">
-<h3>Cuadro Jack</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card cuadro">
-<img src="images/cuadro-jason.jpeg">
-<div class="card-content">
-<h3>Cuadro Jason</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card deco">
-<img src="images/deco-mariposa.jpeg">
-<div class="card-content">
-<h3>Decoración Mariposa</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card figura">
-<img src="images/figura-chucky.jpeg">
-<div class="card-content">
-<h3>Figura Chucky</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card figura">
-<img src="images/figura-gato-it.jpeg">
-<div class="card-content">
-<h3>Figura Gato IT</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card iman">
-<img src="images/imanes-brilla-oscuridad.jpeg">
-<div class="card-content">
-<h3>Imanes Glow</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card iman">
-<img src="images/imanes-mario.jpeg">
-<div class="card-content">
-<h3>Imanes Mario</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card iman">
-<img src="images/imanes-terror.jpeg">
-<div class="card-content">
-<h3>Imanes Terror</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card llavero">
-<img src="images/llaveros-arcoiris.jpeg">
-<div class="card-content">
-<h3>Llavero Arcoiris</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card llavero">
-<img src="images/llaveros-monstera.jpeg">
-<div class="card-content">
-<h3>Llavero Monstera</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card llavero">
-<img src="images/llaveros.jpeg">
-<div class="card-content">
-<h3>Llavero</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card deco">
-<img src="images/marcalibro-terror.jpeg">
-<div class="card-content">
-<h3>Marcalibro Terror</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card mate">
-<img src="images/mate-caniche.jpeg">
-<div class="card-content">
-<h3>Mate Caniche</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card mate">
-<img src="images/mate-harry.jpeg">
-<div class="card-content">
-<h3>Mate Harry</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card mate">
-<img src="images/mate-harry1.jpeg">
-<div class="card-content">
-<h3>Mate Harry Variante</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card mate">
-<img src="images/mate-unicornio.jpeg">
-<div class="card-content">
-<h3>Mate Unicornio</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card posavaso">
-<img src="images/posavaso-casafantasmas.jpeg">
-<div class="card-content">
-<h3>Posavaso Ghostbusters</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card posavaso">
-<img src="images/posavaso-monstera.jpeg">
-<div class="card-content">
-<h3>Posavaso Monstera</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card accesorio">
-<img src="images/protector-airpod.jpeg">
-<div class="card-content">
-<h3>Protector AirPods</h3>
-<button>Buy</button>
-</div>
-</div>
-
-<div class="card deco">
-<img src="images/reloj.jpeg">
-<div class="card-content">
-<h3>Reloj</h3>
-<button>Buy</button>
-</div>
-</div>
-
-</section>
-
-<hr>
-
-<header>
-STL Downloads
-</header>
-
-<section class="gallery">
-
-<div class="card">
-<img src="images/figura-chucky.jpeg">
-<div class="card-content">
-<h3>Chucky STL</h3>
-<button>Download STL</button>
-</div>
-</div>
-
-<div class="card">
-<img src="images/llaveros-arcoiris.jpeg">
-<div class="card-content">
-<h3>Rainbow Keychain STL</h3>
-<button>Download STL</button>
-</div>
-</div>
-
-</section>
-
-</body>
-
-</html>
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
